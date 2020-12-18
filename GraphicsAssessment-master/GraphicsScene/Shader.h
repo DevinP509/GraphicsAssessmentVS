@@ -27,26 +27,26 @@ enum eShaderStage : unsigned int {
 class Shader {
 public:
 
-	Shader() : m_stage(0), m_handle(0), m_lastError(nullptr) {}
+	Shader() : m_stage(0), m_handle(0), m_lastError(nullptr) {}//!<
 	Shader(unsigned int stage, const char* filename)
 		: m_stage(0), m_handle(0), m_lastError(nullptr) {
-		loadShader(stage, filename);
+		loadShader(stage, filename);//!<
 	}
 	~Shader();
 
-	bool loadShader(unsigned int stage, const char* filename);
-	bool createShader(unsigned int stage, const char* string);
+	bool loadShader(unsigned int stage, const char* filename);//!<
+	bool createShader(unsigned int stage, const char* string);//!<
 
-	unsigned int getStage() const { return m_stage; }
-	unsigned int getHandle() const { return m_handle; }
+	unsigned int getStage() const { return m_stage; }//!<
+	unsigned int getHandle() const { return m_handle; }//!<
 
-	const char* getLastError() const { return m_lastError; }
+	const char* getLastError() const { return m_lastError; }//!<
 
 protected:
 
-	unsigned int	m_stage;
-	unsigned int	m_handle;
-	char*			m_lastError;
+	unsigned int	m_stage;//!<
+	unsigned int	m_handle;//!<
+	char*			m_lastError;//!<
 };
 
 // combines shaders together into a single program for the GPU
@@ -58,62 +58,62 @@ public:
 	}
 	~ShaderProgram();
 
-	bool loadShader(unsigned int stage, const char* filename);
-	bool createShader(unsigned int stage, const char* string);
-	void attachShader(const std::shared_ptr<Shader>& shader);
+	bool loadShader(unsigned int stage, const char* filename);//!<
+	bool createShader(unsigned int stage, const char* string);//!<
+	void attachShader(const std::shared_ptr<Shader>& shader);//!<
 
-	bool link();
+	bool link();//!<
 
-	const char* getLastError() const { return m_lastError; }
+	const char* getLastError() const { return m_lastError; }//!<
 
-	void bind();
+	void bind();//!<
 
-	unsigned int getHandle() const { return m_program; }
+	unsigned int getHandle() const { return m_program; }//!<
 
-	int getUniform(const char* name);
+	int getUniform(const char* name);//!<
 
-	void bindUniform(int ID, int value);
-	void bindUniform(int ID, float value);
-	void bindUniform(int ID, const glm::vec2& value);
-	void bindUniform(int ID, const glm::vec3& value);
-	void bindUniform(int ID, const glm::vec4& value);
-	void bindUniform(int ID, const glm::mat2& value);
-	void bindUniform(int ID, const glm::mat3& value);
-	void bindUniform(int ID, const glm::mat4& value);
-	void bindUniform(int ID, int count, int* value);
-	void bindUniform(int ID, int count, float* value);
-	void bindUniform(int ID, int count, const glm::vec2* value);
-	void bindUniform(int ID, int count, const glm::vec3* value);
-	void bindUniform(int ID, int count, const glm::vec4* value);
-	void bindUniform(int ID, int count, const glm::mat2* value);
-	void bindUniform(int ID, int count, const glm::mat3* value);
-	void bindUniform(int ID, int count, const glm::mat4* value);
+	void bindUniform(int ID, int value);//!<
+	void bindUniform(int ID, float value);//!<
+	void bindUniform(int ID, const glm::vec2& value);//!<
+	void bindUniform(int ID, const glm::vec3& value);//!<
+	void bindUniform(int ID, const glm::vec4& value);//!<
+	void bindUniform(int ID, const glm::mat2& value);//!<
+	void bindUniform(int ID, const glm::mat3& value);//!<
+	void bindUniform(int ID, const glm::mat4& value);//!<
+	void bindUniform(int ID, int count, int* value);//!<
+	void bindUniform(int ID, int count, float* value);//!<
+	void bindUniform(int ID, int count, const glm::vec2* value);//!<
+	void bindUniform(int ID, int count, const glm::vec3* value);//!<
+	void bindUniform(int ID, int count, const glm::vec4* value);//!<
+	void bindUniform(int ID, int count, const glm::mat2* value);//!<
+	void bindUniform(int ID, int count, const glm::mat3* value);//!<
+	void bindUniform(int ID, int count, const glm::mat4* value);//!<
 
 	// these calls should be avoided, but wraps up opengl a little
-	bool bindUniform(const char* name, int value);
-	bool bindUniform(const char* name, float value);
-	bool bindUniform(const char* name, const glm::vec2& value);
-	bool bindUniform(const char* name, const glm::vec3& value);
-	bool bindUniform(const char* name, const glm::vec4& value);
-	bool bindUniform(const char* name, const glm::mat2& value);
-	bool bindUniform(const char* name, const glm::mat3& value);
-	bool bindUniform(const char* name, const glm::mat4& value);
-	bool bindUniform(const char* name, int count, int* value);
-	bool bindUniform(const char* name, int count, float* value);
-	bool bindUniform(const char* name, int count, const glm::vec2* value);
-	bool bindUniform(const char* name, int count, const glm::vec3* value);
-	bool bindUniform(const char* name, int count, const glm::vec4* value);
-	bool bindUniform(const char* name, int count, const glm::mat2* value);
-	bool bindUniform(const char* name, int count, const glm::mat3* value);
-	bool bindUniform(const char* name, int count, const glm::mat4* value);
+	bool bindUniform(const char* name, int value);//!<
+	bool bindUniform(const char* name, float value);//!<
+	bool bindUniform(const char* name, const glm::vec2& value);//!<
+	bool bindUniform(const char* name, const glm::vec3& value);//!<
+	bool bindUniform(const char* name, const glm::vec4& value);//!<
+	bool bindUniform(const char* name, const glm::mat2& value);//!<
+	bool bindUniform(const char* name, const glm::mat3& value);//!<
+	bool bindUniform(const char* name, const glm::mat4& value);//!<
+	bool bindUniform(const char* name, int count, int* value);//!<
+	bool bindUniform(const char* name, int count, float* value);//!<
+	bool bindUniform(const char* name, int count, const glm::vec2* value);//!<
+	bool bindUniform(const char* name, int count, const glm::vec3* value);//!<
+	bool bindUniform(const char* name, int count, const glm::vec4* value);//!<
+	bool bindUniform(const char* name, int count, const glm::mat2* value);//!<
+	bool bindUniform(const char* name, int count, const glm::mat3* value);//!<
+	bool bindUniform(const char* name, int count, const glm::mat4* value);//!<
 
 private:
 
-	unsigned int	m_program;
+	unsigned int	m_program;//!<
 
-	std::shared_ptr<Shader> m_shaders[eShaderStage::SHADER_STAGE_Count];
+	std::shared_ptr<Shader> m_shaders[eShaderStage::SHADER_STAGE_Count];//!<
 
-	char*			m_lastError;
+	char*			m_lastError;//!<
 };
 
 }

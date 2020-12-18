@@ -73,9 +73,9 @@ private:
 		int				materialID;
 	};
 
-	std::string				m_filename;
-	std::vector<MeshChunk>	m_meshChunks;
-	std::vector<Material>	m_materials;
+	std::string				m_filename;//!< Objects file name
+	std::vector<MeshChunk>	m_meshChunks;//!< MeshChunks
+	std::vector<Material>	m_materials;//!< Objects material
 };
 
 }

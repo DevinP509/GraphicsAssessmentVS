@@ -17,7 +17,6 @@ uniform mat3 NormalMatrix;
 uniform float time;
 
 void main() {
-	//move the tree a bit and mess with normal over time
 	vPosition = ModelMatrix * aPosition;
 	vNormal = NormalMatrix * aNormal.xyz;
 	vColor = aColor;

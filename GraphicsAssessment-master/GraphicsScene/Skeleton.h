@@ -9,7 +9,7 @@ public:
 	Skeleton();
 	~Skeleton() {}
 
-	bool update(double deltaTime) override;
+	bool update(double deltaTime) override;//!< An array of bones
 	bool draw() override;
 
 	void addBone(Bone* bone);

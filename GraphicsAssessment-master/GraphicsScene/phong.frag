@@ -21,6 +21,7 @@ uniform vec3 IdTwo;
 uniform vec3 IsTwo;
 uniform vec3 LightDirectionTwo;
 
+uniform sampler2D diffuseTexture;
 
 uniform vec3 CameraPosition;
 
@@ -69,5 +70,5 @@ void main() {
 	specular = (Ks + vColor.rgb) * IsTwo * specularTerm;
 	FragColor += vec4(ambient + diffuse + specular, 1);
 
-
-}
+	FragColor += texture(diffuseTexture, vTexCoord) + vColor;
+	}

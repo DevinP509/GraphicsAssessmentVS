@@ -24,10 +24,10 @@ public:
 	void initializeQuad();
 	void initializeCube();
 
-	virtual void draw();
+	virtual void draw();//!< Draws the mesh
 
 protected:
-	unsigned int m_triCount;
-	unsigned int m_vao, m_vbo, m_ibo;
+	unsigned int m_triCount;//!< The amount of triangles on an object
+	unsigned int m_vao, m_vbo, m_ibo;//!< Vertex Array Objects, Vertex Buffer Objects,Index Buffer Objects
 };
 

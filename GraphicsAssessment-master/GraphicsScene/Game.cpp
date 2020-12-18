@@ -108,7 +108,7 @@ bool Game::start()
 	}
 
 	//Load obj mesh
-	if (!m_objMesh.load("Bunny.obj")) {
+	if (!m_objMesh.load("soulspear.obj")) {
 		printf("Failed to load OBJmesh.\n");
 		return false;
 	}
@@ -154,11 +154,11 @@ bool Game::start()
 	m_skeleton->addBone(m_ankleBone);
 
 	m_light.setAmbient({ 0.05f, 0.5f, 0.5f });
-	m_light.setDiffuse({ 0.0f, 0.6f, 1.0f });
+	m_light.setDiffuse({ 0.0f, 0.f, 1.0f });
 	m_light.setSpecular({ 1.0f, 1.0f, 1.0f });
 	
 	m_light2.setAmbient({ 0.05f, 0.5f, 0.5f });
-	m_light2.setDiffuse({ 1.0f, 0.0f, 1.0f });
+	m_light2.setDiffuse({ 1.0f, 1.0f, 1.0f });
 	m_light2.setSpecular({ 1.0f, 1.0f, 1.0f });
 
 
@@ -233,11 +233,8 @@ bool Game::draw()
 	m_shader.bindUniform("NormalMatrix",
 		glm::inverseTranspose(glm::mat3(m_meshTransform)));
 	m_shader.bindUniform("ModelMatrix", m_meshTransform);
-	m_shader.bindUniform("time", (float)glfwGetTime());
 	
-
 	m_shader.bindUniform("diffuseTexture", 0);
-	
 
 	//Draw obj mesh
 	pvm = projectionMatrix * viewMatrix * m_meshTransform;
