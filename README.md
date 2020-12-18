@@ -1,2 +1,2 @@
 # GraphicsAssessmentVS
-https://devinp509.github.io/GraphicsAssessmentVS/docs/
+https://devinp509.github.io/GraphicsAssessmentVS/
